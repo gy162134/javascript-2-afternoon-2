@@ -178,7 +178,7 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 function removeItem(myGroceryList, removeItem){
-  if(myGroceryList.length > 0){
+  if(myGroceryList && removeItem){
     for(i=0; i<myGroceryList.length; i++){
       if(myGroceryList[i] === removeItem){
         myGroceryList.splice(i,1)
@@ -187,9 +187,20 @@ function removeItem(myGroceryList, removeItem){
     return myGroceryList;
   }
   else{
-    return myGroceryList;
+    return [];
   }
 }
+
+function addItem(myGroceryList, addItem){
+  if(myGroceryList && addItem){
+    myGroceryList.push(addItem)
+    return myGroceryList;
+  }
+  else{
+    return [];
+  }
+}
+
 
 
 
@@ -199,7 +210,13 @@ function removeItem(myGroceryList, removeItem){
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker(){
+  var arr = []
+  for(i=0; i<=214; i++){
+    arr[i] = i+1
+  }
+  return arr
+}
 
 
 
@@ -215,23 +232,28 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers){
+  for(i=0;i<numbers.length;i++){
+    numbers[i] = Number(numbers[i])+10
+  }
+  return numbers
+}
 
 
 
 ////////// PROBLEM 11 //////////
 
 // Do not edit the code below.
-var num1 = Math.floor(Math.random() * 30);
-var num2 = Math.floor(Math.random() * 30);
-var arr1 = [];
-var arr2 = [];
-for(var i = 0; i < num1; i++){
-  arr1.push(i);
-}
-for(var i = 0; i < num2; i++){
-  arr2.push(i);
-}
+// var num1 = Math.floor(Math.random() * 30);
+// var num2 = Math.floor(Math.random() * 30);
+// var arr1 = [];
+// var arr2 = [];
+// for(var i = 0; i < num1; i++){
+//   arr1.push(i);
+// }
+// for(var i = 0; i < num2; i++){
+//   arr2.push(i);
+// }
 // Do not edit the code above.
 
 /*
@@ -240,7 +262,11 @@ for(var i = 0; i < num2; i++){
   Return the array which is longest.
 */
 
-//Code Here
+function longer(arr1, arr2){
+  if(arr1.length>arr2.length){
+    return arr1
+  }return arr2
+}
 
 
 
@@ -252,7 +278,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1,arr2){
+  var newArray = []
+  for(i=0;i<arr1.length;i++){
+    for(j=0;j<arr2.length;j++){
+      if(arr1[i] === arr2[j]){
+        newArray.push(arr1[i])
+      }
+    }
+  }
+  return newArray;
+}
 
 
 
@@ -292,7 +328,8 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(tyler,cahlan,ryan,colt)
+console.log(devMountainEmployees.length)
 
 
 
@@ -301,7 +338,11 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for(i=0;i<devMountainEmployees.length; i++){
+  if(devMountainEmployees[i].name === "Cahlan"){
+    devMountainEmployees.splice(i,1)
+  }
+}
 
 
 
@@ -313,7 +354,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+var users = []
 
 
 
@@ -332,7 +373,29 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+var user2 = {
+    name: 'Garrett Yaworski',
+    email: 'gy162134@gmail.com',
+    password: 'iAlsoLoveJavaScript',
+    username: 'infiniteLoopsAreBad'
+}
+
+var user3 = {
+  name: 'Robert Culbert',
+  email: 'rfculbert@gmail.com',
+  password: 'iDontLoveJavaScript',
+  username: 'infiniteLoopsAreConfusing'
+}
+
+var user4 = {
+  name: 'Katryna Yaworski',
+  email: 'kngarri@gmail.com',
+  password: 'iDontKnowJavaScript',
+  username: 'infiniteLoopsAreNotAThing'
+}
+
+users.push(user1,user2,user3,user4)
+
 
 
 
@@ -346,7 +409,12 @@ var user1 = {
   Once you find the particular index he's located in, delete him from the array.
 */
 
-//Code Here
+for(i=0; i<users.length;i++){
+  if(users[i].email === 'tylermcginnis33@gmail.com'){
+    users.splice(i,1)
+  }
+  
+}
 
 
 
